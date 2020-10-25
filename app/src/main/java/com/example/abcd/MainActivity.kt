@@ -1,5 +1,6 @@
 package com.example.abcd
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     lateinit var et_name: String
     lateinit var et_location:String
+    lateinit var btn_pendingorders:Button
     lateinit var et_email: String
     lateinit var et_phone: String
     lateinit var et_shopName: String
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity() {
         service_Id = "1"
         var HomeBuisnees = "No"
         btn_register = findViewById(R.id.btn_register)
+        btn_pendingorders=findViewById(R.id.btn_pending)
+
         var spinner = findViewById<Spinner>(R.id.spinner_service)
         val serviceList = arrayOf(
             "Grocery & Essentials",
@@ -81,6 +85,10 @@ class MainActivity : AppCompatActivity() {
                     service_Id = "serviceid7"
             }
 
+        }
+        btn_pendingorders.setOnClickListener {
+            val intent= Intent(this@MainActivity,PendingOrdersActivity::class.java)
+            startActivity(intent)
         }
         btn_register.setOnClickListener {
             et_password = findViewById<EditText>(R.id.et_password).text.toString().trim()

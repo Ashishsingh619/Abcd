@@ -290,6 +290,14 @@
         android:layout_below="@id/et_Conpassword"
         android:layout_margin="10dp"
         android:text="Register" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_pending"
+        android:text="pending orders"
+        android:layout_margin="10dp"
+        android:layout_below="@id/btn_register"
+        />
 
 </RelativeLayout>
 
